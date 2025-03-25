@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, buttonVariants } from "./ui/button";
+import { Button } from "./ui/button";
 import { Briefcase, Clock, MessageSquareText, User } from "lucide-react";
 
 const Sidebar = () => {

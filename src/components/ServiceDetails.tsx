@@ -6,7 +6,6 @@ import {
   Clock,
   DollarSign,
   ChevronRight,
-  Check,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -73,8 +72,8 @@ export const ServiceDetails: React.FC<ServiceDetailsProps> = ({
               new fields.
             </li>
             <li>
-              Need advice on software engineering roles? I'll help you navigate
-              your options.
+              Need advice on software engineering roles? I will help you
+              navigate your options.
             </li>
           </ul>
         </div>
