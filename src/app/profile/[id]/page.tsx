@@ -2,12 +2,12 @@ import { MentorProfile } from "@/components/MentorProfile";
 import { mentorsData } from "@/data/mentors";
 
 interface PageProps {
-  params: { id: string };
+  param: { id: string };
   //   searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export default function MentorPage({ params }: PageProps) {
-  const index = parseInt(params.id, 10);
+export default function MentorPage({ param }: PageProps) {
+  const index = parseInt(param.id, 10);
   const mentor = mentorsData[index];
 
   if (!mentor) {
