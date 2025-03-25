@@ -1,35 +1,12 @@
-import { mentorsData } from "@/data/mentors";
 import { MentorProfile } from "@/components/MentorProfile";
-import { Metadata } from "next";
+import { mentorsData } from "@/data/mentors";
 
-// Generate static paths based on the mentorsData array index
-export async function generateStaticParams() {
-  return mentorsData.map((_, index) => ({
-    id: index.toString(),
-  }));
-}
-
-// Optional: Generate metadata dynamically based on the mentor details
-export async function generateMetadata({
-  params,
-}: {
+interface PageProps {
   params: { id: string };
-}): Promise<Metadata> {
-  const index = parseInt(params.id, 10);
-  const mentor = mentorsData[index];
-
-  return {
-    title: mentor ? `${mentor.name} | Mentorship Platform` : "Mentor not found",
-    description: mentor
-      ? `Learn from ${mentor.name}, ${mentor.position} at ${mentor.company}`
-      : "",
-    icons: {
-      icon: "/favicon.ico",
-    },
-  };
+  //   searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export default function MentorPage({ params }: { params: { id: string } }) {
+export default function MentorPage({ params }: PageProps) {
   const index = parseInt(params.id, 10);
   const mentor = mentorsData[index];
 
